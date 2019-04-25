@@ -12,6 +12,7 @@ require_relative 'extract/references/resolved_references.rb'
 require_relative 'extract/view/pdf_view.rb'
 require_relative 'extract/view/xml_view.rb'
 require_relative 'extract/view/bib_view.rb'
+require_relative 'extract/view/json_view.rb'
 
 module PdfExtract
 
@@ -70,6 +71,7 @@ module PdfExtract
     add_view :pdf, PdfView
     add_view :xml, XmlView
     add_view :bib, BibView
+    add_view :json, JsonView
   end
 
   init
