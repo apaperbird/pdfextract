@@ -7,7 +7,7 @@ module PdfExtract
       pdf.spatials :resolved_references, :depends_on => [:references] do |parser|
 
         resolved_refs = []
-        
+
         parser.objects :references do |ref|
           resolved_refs << ref.merge(Resolve.find(ref))
         end
@@ -20,7 +20,7 @@ module PdfExtract
     end
 
     def self.reverse_resolve ref
-      
+
       url = "http://api.labs.crossref.org/search?q=#{CGI.escape(ref)}"
       doc = Nokogiri::HTML(open url)
 

@@ -22,6 +22,7 @@ resolvers = {
 
 outputs = {
   :xml => proc { :stdout },
+  :json => proc { |f| File::basename(f.sub /\.[a-zA-Z0-9]+\Z/, "") + ".refs.json" },
   :bib => proc { |f| File::basename(f.sub /\.[a-zA-Z0-9]+\Z/, "") + ".refs.bib" },
   :pdf => proc { |f| File::basename(f.sub /\.[a-zA-Z0-9]+\Z/, "") + ".mask.pdf" }
 }
@@ -31,6 +32,11 @@ commands = [
     :name => "extract",
     :view => :xml,
     :description => "Extract objects as XML."
+  },
+  {
+    :name => "extract-json",
+    :view => :json,
+    :description => "Extract resolved references to json format."
   },
   {
     :name => "extract-bib",
