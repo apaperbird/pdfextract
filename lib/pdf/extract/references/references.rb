@@ -208,11 +208,11 @@ module PdfExtract
 
           sections.each do |section|
             if section[:reference_score] >= min_permittable
-              puts section[:reference_score]
-              puts min_permittable
-              puts ""
-              puts section
-              puts "=====================\n\n"            # TODO Enable classification once we have a reasonable model.
+              #puts section[:reference_score]
+              #puts min_permittable
+              #puts ""
+              #puts section
+              #puts "=====================\n\n"            # TODO Enable classification once we have a reasonable model.
             #if Score.reference?(section)
               content = Spatial.get_text_content(section)
               if numeric_sequence? pdf, content
@@ -224,7 +224,7 @@ module PdfExtract
               end
             end
           end
-          
+          puts refs
 
           # TODO Ideally we wouldn't see the ref headers here.
           # Unfortunately publication details can look a lot like references.
