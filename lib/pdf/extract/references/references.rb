@@ -224,7 +224,7 @@ module PdfExtract
               end
             end
           end
-          puts refs
+          #puts refs
 
           # TODO Ideally we wouldn't see the ref headers here.
           # Unfortunately publication details can look a lot like references.
